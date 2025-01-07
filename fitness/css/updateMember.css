@@ -1,0 +1,133 @@
+/* updateMember.css */
+
+/* General styling for body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Styling for the form container */
+.memberhead {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Form heading */
+.memberhead h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Label styles */
+form label {
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+/* Input field styles */
+form input[type="text"],
+form input[type="email"],
+form input[type="date"],
+form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="file"] {
+    font-size: 14px;
+}
+
+/* Input fields focus state */
+form input:focus,
+form select:focus {
+    border-color: #5d8ff3;
+    outline: none;
+}
+
+/* Button styles */
+.btna2,
+.btna1 {
+    background-color: #5d8ff3;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btna2:hover,
+.btna1:hover {
+    background-color: #3a6fd9;
+}
+
+/* Delete button with a red style */
+.btna1 {
+    background-color: #e74c3c;
+    margin-top: 10px;
+}
+
+.btna1:hover {
+    background-color: #c0392b;
+}
+
+/* Additional form styling */
+.member {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 500px) {
+    .memberhead {
+        padding: 20px;
+    }
+
+    form label {
+        font-size: 14px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="date"],
+    form select,
+    form input[type="file"] {
+        font-size: 12px;
+    }
+
+    .btna2,
+    .btna1 {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

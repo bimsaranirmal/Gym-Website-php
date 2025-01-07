@@ -1,0 +1,118 @@
+/* viewTrainer.css */
+
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #eaeff3;
+    margin: 0;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Trainer details container */
+.trainer-details {
+    background: linear-gradient(135deg, #ffffff 50%, #f5f8fa 100%);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    max-width: 650px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.trainer-details:hover {
+    transform: translateY(-5px);
+}
+
+/* Heading styles */
+.trainer-details h3 {
+    font-size: 28px;
+    color: #34495e;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #5d8ff3;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Paragraph and details styling */
+.trainer-details p {
+    font-size: 17px;
+    color: #555;
+    margin-bottom: 18px;
+    text-align: left;
+    line-height: 1.8;
+}
+
+/* Strong tag to highlight labels */
+.trainer-details p strong {
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+/* Trainer image styling */
+.trainer-details img {
+    margin-top: 25px;
+    border-radius: 50%;
+    border: 4px solid #ddd;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.trainer-details img:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Back button styling */
+.btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 50px;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.2);
+}
+
+.btn:hover {
+    background-color: #1b6ca8;
+    box-shadow: 0 6px 20px rgba(27, 108, 168, 0.4);
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .trainer-details {
+        padding: 25px;
+    }
+
+    .trainer-details h3 {
+        font-size: 22px;
+    }
+
+    .trainer-details p {
+        font-size: 15px;
+    }
+
+    .btn {
+        font-size: 15px;
+        padding: 12px 20px;
+    }
+
+    .trainer-details img {
+        width: 160px;
+        height: 160px;
+    }
+}

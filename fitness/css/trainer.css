@@ -1,0 +1,762 @@
+html,
+body {
+    height: 100%; /* Ensure the body takes the full height */
+    margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Make main section take available space */
+    padding-bottom: 100px;
+  }
+  
+  .footer {
+    align-items: center;
+    position: fixed; /* Fix the footer to the bottom of the viewport */
+    bottom: 0%; /* Align it to the bottom */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Make it full width */
+    background-color: var(--text-dark); /* Adjust background color as needed */
+    color: var(--white); /* Set text color */
+    padding: 1px; /* Padding for the footer */
+    text-align: center; /* Center the text */
+    z-index: 10; /* Make sure it stays on top of other content */
+  }
+  
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  overflow: hidden;
+}
+
+nav {
+  position: fixed;
+  isolation: isolate;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+.nav__header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--text-dark);
+}
+
+.nav__logo img {
+  
+  max-width: 175px;
+}
+
+.nav__logo .logo-dark {
+    align-items: center;
+  display: none;
+}
+
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.nav__links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--text-dark);
+  transition: transform 0.5s;
+  z-index: -1;
+}
+
+.nav__links.open {
+  transform: translateY(100%);
+}
+
+
+.nav__links a {
+  font-weight: 600;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.nav__links a:hover {
+  color: var(--primary-color);
+}
+
+.nav__btns {
+  display: none;
+}
+
+.header__container {
+  display: grid;
+  gap: 2rem;
+}
+
+.header__container h1 {
+  position: relative;
+  isolation: isolate;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 5rem;
+  color: var(--secondary-color);
+  font-style: italic;
+  text-align: center;
+}
+
+.header__container h1::before {
+  position: absolute;
+  content: "GROW YOUR STRENGTH";
+  top: -5rem;
+  left: -5rem;
+  font-size: 8rem;
+  font-weight: 800;
+  line-height: 10rem;
+  color: rgba(0, 0, 0, 0.05);
+  z-index: -1;
+}
+
+.header__container h2 {
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 5rem;
+  color: var(--text-dark);
+  font-style: italic;
+  text-align: center;
+}
+
+.header__container p {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.header__btn {
+  text-align: center;
+}
+
+.header__image img {
+  max-width: 300px;
+  margin-inline: auto;
+}
+
+.sidebar {
+   overflow-x: hidden;
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #2e2a3b; /* Transparent white for glass effect */
+    backdrop-filter: blur(10px); /* Blur effect for glass effect */
+    padding-top: 5px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    border-radius: 0; /* Optional: rounded corners */
+    transition: background 0.3s; /* Smooth transition for background */
+}
+
+.sidebar h2 {
+    color: #000;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    
+    padding: 5px;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    box-shadow: 0 2px 5px rgba(219, 211, 211, 0.5);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+}
+
+.sidebar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly darker on hover */
+    border-radius: 5px;
+}
+
+/* When sidebar is visible */
+.sidebar.active {
+    display: block;
+}
+
+.sidebar form{
+    background-color: #2e2a3b;
+}
+
+/* Main Content Styling */
+.main-content {
+    margin-left: 240px;
+    padding-left: 20px;
+}
+.session input{
+    width: 500px;
+}
+.btnSm{
+    margin-top: 5px;
+    background-color: #9f2212;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Hide all sections except the first one */
+.dashboard-section {
+    display: none;
+}
+
+.dashboard-section:first-child {
+    display: block;
+}
+
+/* For screen sizes smaller than 768px, hide the sidebar */
+@media (max-width: 768px) {
+    nav {
+      padding-right: 40px;
+      }
+    .sidebar {
+        padding-top: 30px;
+        width: 100%; /* Set the width to 100% for mobile */
+        height: auto; /* Adjust height to auto */
+        display: none; /* Initially hide the sidebar */
+        position: relative; /* Change position so it appears within content flow */
+    }
+
+    .main-content {
+        margin-top: 60px;
+        margin-left: 0; /* Remove the left margin */
+    }
+
+    /* Show the menu button */
+    .nav__menu__btn {
+        padding-right: 10px;
+        display: block;
+    }
+}
+
+
+
+.action-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.add button, .search form button {
+  padding: 8px 12px;
+  margin-right: 10px;
+}
+
+.search input {
+  padding: 8px;
+  width: 200px;
+}
+
+@media (width > 540px) {
+  .service__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .popular__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mentor__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav__links {
+    display: none; /* Hide the menu items */
+  }
+
+  .nav__btns {
+    display: flex; /* Keep the buttons if needed, or hide them */
+  }
+}
+@media (width > 768px) {
+  header {
+    position: relative;
+    isolation: isolate;
+  }
+
+  header::before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    bottom: 0;
+    width: 65%;
+    aspect-ratio: 1;
+    background-image: var(--gradient-1);
+    border-radius: 100%;
+    z-index: -1;
+  }
+
+  nav {
+    position: static;
+    padding: 2rem 1rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav__header {
+    flex: 1;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__logo img {
+    max-width: 200px;
+  }
+
+  .nav__logo .logo-dark {
+    display: flex;
+  }
+
+  .nav__logo .logo-white {
+    display: none;
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    position: static;
+    width: fit-content;
+    padding: 0;
+    flex-direction: row;
+    background-color: transparent;
+    transform: none !important;
+  }
+
+  .nav__links a {
+    color: var(--text-dark);
+  }
+
+  .nav__links li:last-child {
+    display: none;
+  }
+
+  .nav__btns {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .header__container {
+    padding-top: 0;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .header__container :is(h1, h2, p, .header__btn) {
+    text-align: left;
+  }
+}
+
+  section {
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  h2 {
+    color: #333;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 28px;
+    margin-bottom: 15px; /* Space between title and details */
+    padding: 10px; /* Padding around the title */
+    background-color: #e1d9d9; /* Background color to highlight */
+    border-radius: 5px; /* Rounded corners for the title background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Class Cards */
+  .class-card, .trainer-card, .membership-plan {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Form Styles */
+  form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .btna1 {
+    background-color: #9f2212;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btna1:hover {
+    background-color: #581108;
+  }
+
+  .btna2 {
+    background-color: #129f33;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
+  .profileForm{
+    width: 2000px;
+    background-color: #827e7e;
+  }
+
+  .pUpdate{
+    background-color: #b1d751;
+    color: rgb(86, 12, 12);
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .pUpdate:hover{
+    background-color: #cfea8b;
+    color: rgb(18, 5, 5);
+    font-size: 20px;
+  }
+
+  /* Profile Section Styles */
+  .profile-section {
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    align-items: center; /* Center items horizontally */
+    margin-bottom: 0; /* Spacing between profile and menu */
+    padding: 5px; /* Add some padding for spacing */
+}
+
+.profile-image {
+    border: white;
+    width: 90px; /* Width of the image */
+    height: 90px; /* Height of the image */
+    border-radius: 50%; /* Makes the image circular */
+    margin-bottom: 5px; /* Space between image and name */
+}
+
+.btnts{
+    background-color: #404541;
+    color: white;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+}
+
+.btnts:hover{
+    background-color: #a6cd3d;
+    color: rgb(14, 14, 14);
+    padding: 9px 27px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+}
+
+
+.searcht_input{
+    background-color: #bab4b4;
+}
+
+/* Table Styles */
+table {
+  margin-bottom: 20px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 10px;
+  border: 1px solid #0c0c0c;
+  text-align: left;
+}
+
+/* Responsive Table for smaller screens */
+@media (max-width: 768px) {
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  table {
+    width: auto; /* Allow table to scroll horizontally */
+  }
+}
+
+th {
+  background-color: #e1d9d9;
+}
+
+th:hover {
+  color: #0a0a0a;
+}
+
+tr:hover {
+  background-color: #494646;
+  color: #ddd;
+}
+
+
+.dashboard-section {
+  margin: 20px;
+  padding: 20px; /* Add some padding */
+  background-color: rgb(175, 194, 148); /* Set background color */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Light shadow */
+}
+
+.trainer-email {
+  margin-top: 0; /* Space above */
+  padding: 10px; /* Padding around the email */
+  background-color: #2e2a3b;
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Center the text */
+  font-weight: bold; /* Make the text bold */
+}
+.form-group {
+  width: 100%;
+  margin-bottom: 15px; /* Spacing between form fields */
+}
+
+label {
+  display: block; /* Block display for labels */
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: bold; /* Bold text for labels */
+  color: #444; /* Darker color for labels */
+}
+
+input, select {
+  width: 100%; /* Full width for inputs and selects */
+  padding: 10px; /* Padding for inputs */
+  margin-bottom: 10px; /* Space below input fields */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size for inputs */
+}
+
+input:focus, select:focus {
+  border-color: #28a745; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
+}
+
+.btn-edit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+  }
+  .btn-edit:hover {
+    background-color: #45a049;
+  }
+  
+  .membership-item {
+    margin-bottom: 20px; /* Space between membership items */
+    max-width: 400px; /* Set a max width for membership items */
+    margin-left: auto; /* Center the items horizontally */
+    margin-right: auto; /* Center the items horizontally */
+    padding: 15px; /* Add padding for better spacing */
+    background-color: white; /* Set background color to white for visibility */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+  }
+  
+  .membership-item .name{
+    background-color: #333232;
+    color: #ccc;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .membership-item .price,
+  .membership-item .description {
+    width: 100%; /* Ensure they take full width of parent */
+    max-width: 350px; /* Limit the width of these elements */
+    margin: 10px auto; /* Center elements horizontally */
+    text-align: center; /* Center text within the boxes */
+  }
+  
+  /* Optional: Adjust button style for consistent look */
+  .btn-edit-plan {
+    display: block; /* Make button a block element */
+    margin: 10px auto; /* Center the button */
+    padding: 10px; /* Padding for the button */
+    background-color: #4CAF50; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    text-align: center; /* Center the button text */
+    width: 100%; /* Full width button */
+    max-width: 150px; /* Limit button width */
+  }
+  
+  .btn-edit-plan:hover {
+    background-color: #263827; /* Button hover color */
+  }
+
+  .member{
+    background-color: #222422;
+  }
+
+  .memberhead form{
+    margin-top: 20px;
+    background-color: #8d8a8a;
+
+  }
+
+  .memberhead input{
+    padding-right: 0px;
+    background-color: #f4f1f1;
+
+  }
+  .b{
+    background-color: #222422;
+  }
+
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Success and error message styling */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alert.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+
+ 
+

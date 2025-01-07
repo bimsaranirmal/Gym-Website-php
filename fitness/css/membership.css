@@ -1,0 +1,103 @@
+/* membership.css */
+
+/* General styling for body */
+body.b {
+    font-family: 'Arial', sans-serif;
+    background-color: #5c5d5e;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form container styling */
+.memberhead {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.memberhead h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Styling form groups */
+.member form {
+    margin-top: 20px;
+    text-align: left;
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 600;
+}
+
+/* Input and textarea fields */
+input[type="text"], 
+input[type="number"], 
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+input:focus, 
+textarea:focus {
+    border-color: #5d8ff3;
+    outline: none;
+}
+
+/* Button styles */
+.btna2, 
+.btna1 {
+    background-color: #5d8ff3;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.btna1 {
+    background-color: #ff5f5f;
+}
+
+.btna2:hover {
+    background-color: #3a6fd9;
+}
+
+.btna1:hover {
+    background-color: #e14e4e;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .memberhead {
+        padding: 20px;
+    }
+
+    .btna2, .btna1 {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
